@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-color: #f8e5e5;
+    --secondary-color: #f9d5d3;
+    --accent-color: #d4756c;
+  }
+
+  body {
+    @apply bg-gradient-to-b from-[--primary-color] to-[--secondary-color] min-h-screen;
+  }
+}
+
+@layer components {
+  .productos-container {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8 max-w-7xl mx-auto;
+  }
+
+  .producto-card {
+    @apply bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
+  }
+
+  .producto-image {
+    @apply w-full aspect-square object-cover transition-transform duration-300 hover:scale-105;
+  }
+
+  .detalle-container {
+    @apply flex flex-col md:flex-row gap-8 bg-white rounded-2xl shadow-lg p-8 max-w-4xl mx-auto my-8;
+  }
+
+  .detalle-imagen {
+    @apply w-full md:w-1/2 rounded-xl object-cover;
+  }
+
+  .detalle-info {
+    @apply flex-1 space-y-4;
+  }
+
+  .detalle-contador {
+    @apply flex items-center gap-4 p-2;
+  }
+
+  .carrito-container {
+    @apply max-w-7xl mx-auto bg-white rounded-2xl shadow-lg p-8 my-8;
+  }
+
+  .carrito-titulos {
+    @apply grid grid-cols-4 gap-4 py-4 border-b border-gray-200 text-gray-600 font-medium;
+  }
+
+  .carrito-card {
+    @apply grid grid-cols-4 gap-4 items-center py-6 border-b border-gray-100;
+  }
+
+  .carrito-image {
+    @apply w-24 h-24 rounded-xl object-cover;
+  }
+
+  .boton-carrito {
+    @apply bg-[--accent-color] text-white px-6 py-2 rounded-full hover:bg-[--accent-color]/90 transition-colors;
+  }
+}
